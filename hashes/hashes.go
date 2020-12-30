@@ -5,20 +5,20 @@
 package hashes
 
 import (
-	"os"
-	"io"
-	"errors"
-	"hash"
 	"crypto/md5"
 	"crypto/sha1"
 	"crypto/sha256"
 	"crypto/sha512"
 	"encoding/hex"
+	"errors"
+	"hash"
+	"io"
+	"os"
 )
 
 const (
-	HASH_MD5 = "md5"
-	HASH_SHA1 = "sha1"
+	HASH_MD5    = "md5"
+	HASH_SHA1   = "sha1"
 	HASH_SHA256 = "sha256"
 	HASH_SHA512 = "sha512"
 )
