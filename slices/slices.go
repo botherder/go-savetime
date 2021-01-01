@@ -25,10 +25,10 @@ func stringInSlice(item string, slice []string, caseSensitive bool) bool {
 	return false
 }
 
-func IsStringInSlice(item string, slice []string) bool {
+func SliceContains(slice []string, item string) bool {
 	return stringInSlice(item, slice, true)
 }
 
-func IsStringInSliceNoCase(item string, slice []string) bool {
+func SliceContainsNoCase(slice []string, item string) bool {
 	return stringInSlice(item, slice, false)
 }
