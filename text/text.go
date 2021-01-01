@@ -2,7 +2,7 @@
 // Copyright (c) 2021 Claudio Guarnieri
 // See the file 'LICENSE' for copying permission.
 
-package slices
+package text
 
 import (
 	"strings"
