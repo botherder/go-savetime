@@ -9,6 +9,8 @@ import (
 	"regexp"
 )
 
+// Expand converts a file path string containing environment variables
+// such as %SystemRoot% into a an absolute path.
 func Expand(path string) string {
 	re := regexp.MustCompile(`\%(?i)(\w*)\%`)
 	match := re.FindStringSubmatch(path)
