@@ -3,7 +3,7 @@
 
 # go-savetime
 
-A collection of Go libraries to save time from re-writing common functions
+A collection of Go libraries to save time from re-writing common functions for operations on files, strings, slices, and more. Refer to the [pkg.go.dev](https://pkg.go.dev/github.com/botherder/go-savetime) page for a complete reference of all available functions.
 
 ## Files
 
