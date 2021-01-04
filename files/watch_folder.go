@@ -10,7 +10,6 @@ import (
 	"path"
 
 	"github.com/fsnotify/fsnotify"
-	log "github.com/sirupsen/logrus"
 )
 
 func WatchFolder(folder string, callback func()) error {
@@ -46,14 +45,12 @@ func WatchFolder(folder string, callback func()) error {
 					return
 				}
 				if event.Op&fsnotify.Write == fsnotify.Write || event.Op&fsnotify.Remove == fsnotify.Remove {
-					log.Info("The file ", event.Name, " was modified in folder ", folder)
 					callback()
 				}
 			}
 		}
 	}()
 
-	log.Info("Launching filesystem watcher for folder: ", folder)
 	err = watcher.Add(folder)
 	if err != nil {
 		if err.Error() == "no space left on device" {
@@ -63,8 +60,6 @@ func WatchFolder(folder string, callback func()) error {
 		return fmt.Errorf("Unable to add %s to filesystem watcher: %s", folder, err)
 	}
 	<-done
-
-	log.Info("Filesystem watcher for folder ", folder, " started")
 
 	return nil
 }
