@@ -12,6 +12,8 @@ import (
 	"github.com/fsnotify/fsnotify"
 )
 
+// WatchFolder uses inotify to monitor a folder and call a callback function
+// when changes are detected.
 func WatchFolder(folder string, callback func()) error {
 	if _, err := os.Stat(folder); os.IsNotExist(err) {
 		return fmt.Errorf("The specified folder does not exist at path %s", folder)
