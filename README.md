@@ -97,3 +97,21 @@ func main() {
     contained = text.ContainsNoCase("This is a TEXT", "text")
 }
 ```
+
+## Watch
+
+```go
+package main
+
+import (
+    "github.com/botherder/go-savetime/watch"
+)
+
+func main() {
+    // Watch a folder for changes. When a change is detected
+    // invoke the callback function.
+    go watch.WatchFolder("/path/to/watch/", func() {
+        doSomething()
+    }
+}
+```
