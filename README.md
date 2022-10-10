@@ -22,7 +22,7 @@ func main() {
 
 	// Read a JSON file at path into data.
 	var data interface{}
-	err = files.Read("/path/file.json", data)
+	err = files.ReadJSON("/path/file.json", data)
 
 	// Zip a path into archive at destination.
 	err = files.Zip("/path/to/folder", "/path/to/archive.zip")
