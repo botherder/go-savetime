@@ -1,7 +1,3 @@
-// This file is part of go-savetime.
-// Copyright (c) 2021 Claudio Guarnieri
-// See the file 'LICENSE' for copying permission.
-
 package hashes
 
 import (
