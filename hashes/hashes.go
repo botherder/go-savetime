@@ -13,23 +13,23 @@ import (
 )
 
 const (
-	HASH_MD5    = "md5"
-	HASH_SHA1   = "sha1"
-	HASH_SHA256 = "sha256"
-	HASH_SHA512 = "sha512"
+	hashMD5    = "md5"
+	hashSHA1   = "sha1"
+	hashSHA256 = "sha256"
+	hashSHA512 = "sha512"
 )
 
 func hashTarget(target, algorithm, format string) (string, error) {
 	var h hash.Hash
 
 	switch algorithm {
-	case HASH_MD5:
+	case hashMD5:
 		h = md5.New()
-	case HASH_SHA1:
+	case hashSHA1:
 		h = sha1.New()
-	case HASH_SHA256:
+	case hashSHA256:
 		h = sha256.New()
-	case HASH_SHA512:
+	case hashSHA512:
 		h = sha512.New()
 	default:
 		return "", errors.New("No valid hashing algorithm specified")
@@ -62,22 +62,22 @@ func HashFile(filePath string, algorithm string) (string, error) {
 
 // FileMD5 returns the MD5 hash of a file at the specified path.
 func FileMD5(filePath string) (string, error) {
-	return HashFile(filePath, HASH_MD5)
+	return HashFile(filePath, hashMD5)
 }
 
 // FileSHA1 returns the SHA1 hash of a file at the specified path.
 func FileSHA1(filePath string) (string, error) {
-	return HashFile(filePath, HASH_SHA1)
+	return HashFile(filePath, hashSHA1)
 }
 
 // FileSHA256 returns the SHA256 hash of a file at the specified path.
 func FileSHA256(filePath string) (string, error) {
-	return HashFile(filePath, HASH_SHA256)
+	return HashFile(filePath, hashSHA256)
 }
 
 // FileSHA512 returns the SHA512 hash of a file at the specified path.
 func FileSHA512(filePath string) (string, error) {
-	return HashFile(filePath, HASH_SHA512)
+	return HashFile(filePath, hashSHA512)
 }
 
 // HashString returns the hex hash of the specified string.
@@ -87,20 +87,20 @@ func HashString(target string, algorithm string) (string, error) {
 
 // StringMD5 returns the MD5 hash of the specified string.
 func StringMD5(target string) (string, error) {
-	return HashString(target, HASH_MD5)
+	return HashString(target, hashMD5)
 }
 
 // StringSHA1 returns the SHA1 hash of the specified string.
 func StringSHA1(target string) (string, error) {
-	return HashString(target, HASH_SHA1)
+	return HashString(target, hashSHA1)
 }
 
 // StringSHA256 returns the SHA256 hash of the specified string.
 func StringSHA256(target string) (string, error) {
-	return HashString(target, HASH_SHA256)
+	return HashString(target, hashSHA256)
 }
 
 // StringSHA512 returns the SHA512 hash of the specified string.
 func StringSHA512(target string) (string, error) {
-	return HashString(target, HASH_SHA512)
+	return HashString(target, hashSHA512)
 }
